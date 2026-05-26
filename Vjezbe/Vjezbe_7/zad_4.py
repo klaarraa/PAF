@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+np.random.seed (42)
+mase_ciste = np.random.normal(loc =2.06 , scale =0.05 , size =57).tolist()
+mase = mase_ciste+[6.0 , 1.2 , 3.2 , 4.5 , 8.5 , 7.8 , 0.08 , 0.02]
+arit_sred1 = np.mean(mase)
+medijan1 = np.median(mase)
+razlika1 = abs(arit_sred1-medijan1)
+print(f"Razlika izmedu aritmeticke sredine i medijana za listu sa pogreskama: {razlika1}")
+arit_sred2 = np.mean(mase_ciste)
+medijan2 = np.median(mase_ciste)
+razlika2 = abs(arit_sred2-medijan2)
+print(f"Razlika izmedu aritmeticke sredine i medijana za listu bez pogresaka: {razlika2}")
+print("Promjena sredine =",abs(arit_sred1-arit_sred2))
+print("Promjena medijana =",abs(medijan1-medijan2))
+plt.hist(mase,bins=10,edgecolor="black")
+plt.axvline(arit_sred1, label="Ar.sred. sa pogreskama", color="green")
+plt.axvline(arit_sred2, label="Ar.sred. bez pogresaka", color="pink")
+plt.axvline(medijan1, label="Medijan sa pogreskama", color="maroon")
+plt.axvline(medijan2, label="Medijan bez pogresaka", color="orange")
+plt.xlabel("Masa")
+plt.ylabel("Frekvencija")
+plt.title("Histogram svih mjerenja")
+plt.legend()
+plt.show()
+# Medijan bolje procjenjuje masu zvijezde jer je manje osjetljiv na ekstremne vrijednosti od aritmeticke sredine
