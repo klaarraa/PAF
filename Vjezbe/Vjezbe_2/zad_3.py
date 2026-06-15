@@ -56,27 +56,27 @@ for i in x:
 
 y_donja_10 = []
 y_gornja_10 = []
-y_donja_50 = []
-y_gornja_50 = []
+y_donja_100 = []
+y_gornja_100 = []
 for i in x:
     donja, gornja = calculus.pravokutna_metoda(f,c,i,10)
     y_donja_10.append(donja)
     y_gornja_10.append(gornja)
     donja, gornja = calculus.pravokutna_metoda(f,c,i,100)
-    y_donja_50.append(donja)
-    y_gornja_50.append(gornja)
+    y_donja_100.append(donja)
+    y_gornja_100.append(gornja)
 y_trapez_10 = []
-y_trapez_50 = []
+y_trapez_100 = []
 for i in x:
     y_trapez_10.append(calculus.trapezna_metoda(f,c,i,10))
-    y_trapez_50.append(calculus.trapezna_metoda(f,c,i,100))
+    y_trapez_100.append(calculus.trapezna_metoda(f,c,i,100))
 plt.plot(x, y_analiticki, label="Analiticko rjesenje")
 plt.plot(x, y_donja_10, label="Pravokutna donja, n=10")
 plt.plot(x, y_gornja_10, label="Pravokutna gornja, n=10")
-plt.plot(x, y_donja_50, label="Pravokutna donja, n=50")
-plt.plot(x, y_gornja_50, label="Pravokutna gornja, n=50")
+plt.plot(x, y_donja_100, label="Pravokutna donja, n=100")
+plt.plot(x, y_gornja_100, label="Pravokutna gornja, n=100")
 plt.plot(x, y_trapez_10, label="Trapezna, n=10")
-plt.plot(x, y_trapez_50, label="Trapezna, n=50")
+plt.plot(x, y_trapez_100, label="Trapezna, n=100")
 plt.title("Analiticko i numericko rjesenje integrala")
 plt.legend()
 plt.grid()
