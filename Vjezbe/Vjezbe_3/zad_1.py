@@ -30,10 +30,10 @@ class Projectile:
         ax_zrak, ay_zrak = self.otpor_zraka(self.vx, self.vy)
         ax = ax_zrak
         ay = ay_zrak - self.g
-        self.vx += ax*dt
-        self.vy += ay*dt
         self.x += self.vx*dt
         self.y += self.vy*dt
+        self.vx += ax*dt
+        self.vy += ay*dt
         self.putanja.append((self.x,self.y))
 
     def simuliraj_euler(self, dt):
